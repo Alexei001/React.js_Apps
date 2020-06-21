@@ -1,17 +1,20 @@
 .nav {
-    padding-left: 15px;
-    grid-area: n;
-    background-color: #14C011;
-  }
-  .item a{
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-  }
-  .active a{
-    color: greenyellow;
-  }
-  .item a:hover{
-    color: greenyellow;
-  }
+  padding-left: 15px;
+  grid-area: n;
+  background-color: #14C011;
+}
+
+.item a{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.item a:hover {
+  color: greenyellow;
+} 
+
+.item a.active_link{
+  color: greenyellow;
+}

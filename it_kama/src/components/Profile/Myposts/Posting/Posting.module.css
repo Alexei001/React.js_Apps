@@ -1,0 +1,28 @@
+.item {
+    display: flex;
+    margin: 10px 0;
+}
+
+.item_icon img {
+    border-radius: 100%;
+    border: 1px solid royalblue;
+    width: 45px;
+    height: 45px;
+}
+
+.item_post {
+    display: flex;
+    flex-direction: column;
+    font-family: cursive;
+}
+
+.post_message {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.post_like {
+    color: royalblue;
+    font-size: 14px;
+}

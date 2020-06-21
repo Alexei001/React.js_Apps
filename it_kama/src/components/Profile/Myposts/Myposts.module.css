@@ -1,18 +1,10 @@
-.myposts {}
-
-.item {
-  display: flex;
-  align-items: flex-end;
-  color: red;
+/* .myposts {} */
+.button{
+    border:none;
+    text-decoration: none;
+    border-radius: 5%;
 }
+.button:hover{
+    background-color: royalblue;
 
-.item h5 {
-  margin: 0;
-}
-
-.iconpost {
-  border-radius: 100%;
-  width: 45px;
-  height: 45px;
-  background-color: #FFC82C;
 }

@@ -4,8 +4,8 @@ import Myposts from './Myposts/Myposts';
 
 const Profile = () => {
     return (
-        <div className={style.content}>
-            <div>
+        <div >
+            <div className={style.img}>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3Z8WMBZxjxBMaaUPcVRhk55otWDdgRm-iyUnI30Km9XHPY73E&usqp=CAU" alt=""/>
             </div>
             <div className={style.avatar}>
@@ -13,7 +13,7 @@ const Profile = () => {
                 <h4>avatar+info</h4>
             </div>
            <Myposts/>
-            </div>
+        </div>
     );
 }
 

@@ -1,0 +1,17 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 20px 0  20px 20px;
+    font-family: cursive;
+}
+.dialogs_title{
+    font-family: cursive;
+    font-weight: bold;
+    padding-left: 15px;
+}
+.dialogs_item{
+    font-weight: bold;
+}
+.dialogs_messages{
+    color: royalblue;
+}
