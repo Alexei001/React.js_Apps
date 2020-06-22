@@ -9,8 +9,13 @@
     font-weight: bold;
     padding-left: 15px;
 }
-.dialogs_item{
+.dialogs_item a{
     font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.item_name a.activeLink{
+    color: blue;
 }
 .dialogs_messages{
     color: royalblue;

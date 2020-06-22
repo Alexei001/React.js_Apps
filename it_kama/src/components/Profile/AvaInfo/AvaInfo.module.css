@@ -1,0 +1,8 @@
+.avatar img{
+    width: auto;
+    height: 80px;
+    border: 2px solid black;
+  }
+.avatar h4{
+  margin: 0;
+}

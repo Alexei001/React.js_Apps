@@ -4,7 +4,7 @@ import style from './News.module.css';
 
 const News=()=>{
     return(
-        <div className='news'>
+        <div className={style.news}>
             <h4>News</h4>
         </div>
     );

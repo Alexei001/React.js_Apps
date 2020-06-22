@@ -4,7 +4,7 @@ import style from './Settings.module.css';
 
 const Settings=()=>{
     return(
-        <div className='settings'>
+        <div className={style.settings}>
             <h4>Settings</h4>
         </div>
     );
