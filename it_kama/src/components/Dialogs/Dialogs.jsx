@@ -1,25 +1,19 @@
 import React from 'react';
 import style from './Dialogs.module.css';
-import { NavLink } from 'react-router-dom';
+import Message from './Message/Message';
+import ItemName from './ItemName/ItemName';
 
-const ItemName = (props) => {
-    return (
-        <div className={style.item_name}>
-            <NavLink to={'/dialogs/' + props.id} activeClassName={style.activeLink}>{props.name}</NavLink>
-        </div>
-    );
-}
-
-const Message = (props) => {
-    return (
-        <div className={style.message}>{props.message}</div>
-    );
-}
 
 const Dialogs = (props) => {
+    const dataInput = React.createRef();
+
+    const alertTextInput = () => {
+        alert(dataInput.current.value);
+    }
+
     /* maping old arrays */
-    const DialogsItem = props.data.DialogsData.map((d) => <ItemName name={d.name} id={d.id} />);
-    const MessagesItem =props.data.MessagesData.map((m) => <Message message={m.message} />);
+    const DialogsItem = props.data.messagesPage.DialogsData.map((d) => <ItemName name={d.name} id={d.id} />);
+    const MessagesItem = props.data.messagesPage.MessagesData.map((m) => <Message message={m.message} />);
 
     return (
         <div>
@@ -33,6 +27,7 @@ const Dialogs = (props) => {
                     {/* new maping arrays */}
                     {MessagesItem}
                 </div>
+                <input type="button" value="alert" onClick={alertTextInput} /><input type="text" ref={dataInput} />
             </div>
         </div>
     );

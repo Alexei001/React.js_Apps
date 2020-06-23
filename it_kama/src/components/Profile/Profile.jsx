@@ -10,7 +10,7 @@ const Profile = (props) => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3Z8WMBZxjxBMaaUPcVRhk55otWDdgRm-iyUnI30Km9XHPY73E&usqp=CAU" alt="" />
             </div>
             <AvatarInfo />
-            <Myposts PostingData={props.data.PostingData}/>
+            <Myposts data={props.data} addPosting={props.addPosting} newTextPosting={props.newTextPosting}/>
         </div>
     );
 }
