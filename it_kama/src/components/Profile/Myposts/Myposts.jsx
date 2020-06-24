@@ -1,3 +1,4 @@
+import { newTextPostingActionCreator, addNewPostActionCreator } from '../../../Redux/state.js';
 import React from 'react';
 import style from './Myposts.module.css';
 import Posting from './Posting/Posting';
@@ -10,13 +11,13 @@ const Myposts = (props) => {
     and return with props new value for textarea
     */
     const onPostChange = () => {
-        props.newTextPosting(messagePost.current.value);
+        props.dispatch(newTextPostingActionCreator(messagePost));
 
     }
 
     /* send click on function addPosting, and nuling the textarea*/
     const addPost = () => {
-        props.addPosting();
+        props.dispatch(addNewPostActionCreator());
     }
 
     /* new maping array */
