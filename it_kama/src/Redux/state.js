@@ -1,6 +1,8 @@
 const NEW_TEXT_POSTING = "NEW-TEXT-POSTING";
 const ADD_NEW_POST = "ADD-NEW-POST";
 
+const UPDATE_NEW_MESSAGE = "UPDATE_NEW_MESSAGE_BODY";
+const ADD_NEW_MESSAGE_DATA = "ADD_NEW_MESSAGE_DATA";
 
 const store = {
     _state: {
@@ -26,7 +28,8 @@ const store = {
                 { id: '2', message: "Hello! how's it going" },
                 { id: '3', message: 'hey you know react?' },
                 { id: '4', message: 'Wat is you skill in React.js?' }
-            ]
+            ],
+            newMessageBody: ""
 
         }
     },
@@ -39,6 +42,8 @@ const store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
+
+        /* add new post */
         if (action.type === ADD_NEW_POST) {
             if (!this._state.profilePage.newTextPosting == '') {
                 let newObj = {
@@ -54,6 +59,21 @@ const store = {
             this._state.profilePage.newTextPosting = action.textPosting;
             this._callSubscriber(this._state);
         }
+
+        /* add new message */
+        else if (action.type === UPDATE_NEW_MESSAGE) {
+            this._state.messagesPage.newMessageBody = action.text;
+            this._callSubscriber(this._state);
+        } else if (action.type === ADD_NEW_MESSAGE_DATA) {
+            if (!this._state.messagesPage.newMessageBody == '') {
+                this._state.messagesPage.MessagesData.push({
+                    id: '5', message: this._state.messagesPage.newMessageBody
+                })
+                this._state.messagesPage.newMessageBody = '';
+                this._callSubscriber(this._state);
+            }
+
+        }
     }
 
 }
@@ -66,6 +86,19 @@ export const addNewPostActionCreator = () => ({
     type: ADD_NEW_POST
 })
 
+
+
+export const updateMessageCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE,
+    text: text
+})
+export const addTextMessageCreator = () => {
+    return (
+        {
+            type: ADD_NEW_MESSAGE_DATA
+        }
+    )
+}
 
 export default store;
 window.store = store;

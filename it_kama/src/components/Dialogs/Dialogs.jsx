@@ -2,18 +2,25 @@ import React from 'react';
 import style from './Dialogs.module.css';
 import Message from './Message/Message';
 import ItemName from './ItemName/ItemName';
+import { updateMessageCreator, addTextMessageCreator } from '../../Redux/state.js';
 
 
 const Dialogs = (props) => {
-    const dataInput = React.createRef();
+    /* maping old arrays */
+    const DialogsItem = props.store.getState().messagesPage.DialogsData.map((d) => <ItemName name={d.name} id={d.id} />);
+    const MessagesItem = props.store.getState().messagesPage.MessagesData.map((m) => <Message message={m.message} />);
 
-    const alertTextInput = () => {
-        alert(dataInput.current.value);
+
+    let textMessage = props.store.getState().messagesPage.newMessageBody;
+
+    const updateMessageBody = (e) => {
+        let newtextMessage = e.target.value
+        props.dispatch(updateMessageCreator(newtextMessage));
     }
 
-    /* maping old arrays */
-    const DialogsItem = props.data.messagesPage.DialogsData.map((d) => <ItemName name={d.name} id={d.id} />);
-    const MessagesItem = props.data.messagesPage.MessagesData.map((m) => <Message message={m.message} />);
+    const sendMessage = () => {
+        props.dispatch(addTextMessageCreator())
+    }
 
     return (
         <div>
@@ -26,8 +33,9 @@ const Dialogs = (props) => {
                 <div className={style.dialogs_messages}>
                     {/* new maping arrays */}
                     {MessagesItem}
+                    <div><textarea placeholder="send new message" value={textMessage} onChange={updateMessageBody} /></div>
+                    <button onClick={sendMessage}>send</button>
                 </div>
-                <input type="button" value="alert" onClick={alertTextInput} /><input type="text" ref={dataInput} />
             </div>
         </div>
     );

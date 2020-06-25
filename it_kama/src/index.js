@@ -9,7 +9,7 @@ const rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <App
-                data={store.getState()}
+                store={store}
                 dispatch={store.dispatch.bind(store)} />
         </React.StrictMode>,
         document.getElementById('root')
