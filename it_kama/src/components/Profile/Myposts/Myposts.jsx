@@ -16,7 +16,7 @@ const Myposts = (props) => {
     const addPost = () => props.addPost();
 
     /* new maping array */
-    const PostingComponents = props.PostingItem.PostingData.map((p) => <Posting messages={p.messages} like_counter={p.likeCounter} />);
+    const PostingComponents = props.PostingItem.PostingData.map((p) => <Posting messages={p.messages} key={p.id} like_counter={p.likeCounter} />);
 
     return (
         <div className={style.mypost}>

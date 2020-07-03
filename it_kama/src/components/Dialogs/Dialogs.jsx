@@ -7,8 +7,8 @@ import ItemName from './ItemName/ItemName';
 
 const Dialogs = (props) => {
     /* maping old arrays */
-    const DialogsItemComponent = props.DialogsItem.map((d) => <ItemName name={d.name} id={d.id} />);
-    const MessagesItemComponent = props.MessagesItem.map((m) => <Message message={m.message} />);
+    const DialogsItemComponent = props.DialogsItem.map((d) => <ItemName key={d.id} name={d.name} id={d.id} />);
+    const MessagesItemComponent = props.MessagesItem.map((m) => <Message key={m.id} message={m.message} />);
 
 
     const updateMessageBody = (e) => {

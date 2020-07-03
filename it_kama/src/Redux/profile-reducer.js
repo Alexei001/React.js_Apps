@@ -24,15 +24,20 @@ export const profileReducer = (state = initialState, action) => {
                     messages: state.newTextPosting,
                     likeCounter: '6'
                 }
-                state.PostingData.push(newObj);
-                state.newTextPosting = '';
+                return {
+                    ...state,
+                    PostingData: [...state.PostingData, newObj],
+                    newTextPosting: ''
+                };
             }
-            return state;
+
         case NEW_TEXT_POSTING:
-            state.newTextPosting = action.textPosting;
-            return state;
+            return {
+                ...state,
+                newTextPosting: action.textPosting
+            };
         default:
-            return state;
+            return {...state};
     }
 }
 
