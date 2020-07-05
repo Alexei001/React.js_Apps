@@ -1,0 +1,75 @@
+.Users_wrapper {
+    font-family: cursive;
+}
+
+.title {
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 5px 0 5px 5px;
+}
+
+.content {
+    width: 700px;
+    display: flex;
+    padding: 5px 0 0 5px;
+}
+.content:last-child{
+    padding-bottom: 5px;
+}
+
+.content_users {
+    background-color: white;
+    width: 500px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name_status {
+    display: flex;
+    flex-direction: column;
+}
+
+.name_status .status {
+    color: royalblue;
+    font-size: 14px;
+}
+.location{
+    padding-right: 10px;
+}
+.city {
+    color: royalblue;
+}
+
+.location .country {
+    color: black;
+    font-size: 20px;
+}
+
+.ava_follow {
+    background-color: white;
+    padding-bottom: 15px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ava_follow img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px 10px 10px 10px;
+}
+
+.ava_follow button {
+    background-color: #13CE66;
+    border: none;
+    border-radius: 15%;
+}
+
+.ava_follow button:hover {
+    background-color: royalblue;
+}
