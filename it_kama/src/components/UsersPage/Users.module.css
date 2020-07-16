@@ -17,7 +17,11 @@
 .content:last-child{
     padding-bottom: 5px;
 }
-
+.pageFix{
+    font-family: cursive;
+    font-weight: bold;
+    color: royalblue;
+}
 .content_users {
     background-color: white;
     width: 500px;
