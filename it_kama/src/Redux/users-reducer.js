@@ -3,13 +3,15 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 const GET_TOTAL_COUNT = 'GET_TOTAL_COUNT';
 const SET_CURENT_PAGE = 'SET_CURENT_PAGE';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialState = {
     /* data of props for component Posting */
     users: [],
     totalCount: 0,
     pageSize: 100,
-    curentPage: 1
+    curentPage: 1,
+    isFetching: false
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -51,6 +53,11 @@ export const usersReducer = (state = initialState, action) => {
                 ...state,
                 curentPage: action.curentPage
             }
+        case TOGGLE_IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
         default:
             return state;
     }
@@ -64,3 +71,4 @@ export const setUsersAC = (newusers) => ({ type: SET_USERS, newusers })
 
 export const totalCountAC = (totalCount) => ({ type: GET_TOTAL_COUNT, totalCount })
 export const curentPageAC = (curentPage) => ({ type: SET_CURENT_PAGE, curentPage })
+export const toggleIsFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
