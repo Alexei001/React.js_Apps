@@ -2,9 +2,10 @@
 import React from 'react';
 import style from './Users.module.css';
 import usersPhoto from '../assets/images/usersPhoto.png';
+import { NavLink } from 'react-router-dom';
 
 const UsersPage = (props) => {
-    
+
     let numPages = Math.ceil(props.totalCount / props.pageSize);
     let arrPages = [];
     for (let i = 1; i <= numPages; i++) {
@@ -14,10 +15,12 @@ const UsersPage = (props) => {
         return (
             <div className={style.content} key={u.id}>
                 <div className={style.ava_follow}>
-                    <img src={(!u.photos === null)
-                        ? u.photos
-                        : usersPhoto
-                    } />
+                    <NavLink to={`/profile/${u.id}`}>
+                        <img src={(!u.photos.small === null)
+                            ? u.photos.small
+                            : usersPhoto
+                        } />
+                    </NavLink>
                     {(u.follow === true)
                         ? <button onClick={() => { props.unfollow(u.id) }}>follow</button>
                         : <button onClick={() => { props.follow(u.id) }}>unfollow</button>}
