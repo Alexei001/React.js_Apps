@@ -6,3 +6,15 @@
     width: auto;
     height: 50px;
   }
+.login{
+  float: right;
+}
+.login a{
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.login a:hover{
+  color: red;
+}
