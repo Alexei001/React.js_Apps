@@ -8,13 +8,29 @@
   }
 .login{
   float: right;
+  position: relative;
+padding: 15px 15px 0 0;
 }
 .login a{
-  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.1s linear;
 }
 .login a:hover{
-  color: red;
+  color: greenyellow;
+}
+.login .logIn__Icon{
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.1s linear;
+}
+.login .logIn__Icon:hover{
+  opacity: 0.5;
 }
